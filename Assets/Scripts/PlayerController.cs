@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public float speed = 3f;
     public InputAction MoveAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Vector2 move = MoveAction.ReadValue<Vector2>();
-        Vector2 position = (Vector2)transform.position + 0.1f * move;
+        Vector2 position = (Vector2)transform.position + speed * move * Time.deltaTime;
         transform.position = position;
     }
 }
