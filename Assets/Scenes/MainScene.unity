@@ -2221,6 +2221,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b8ef5bd5a993646b68750e3c9d4732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  MoveAction:
+    m_Name: Move
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7733e0d8-b9cd-4530-bcba-40922f981df8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 384fd4e0-04a6-44b6-91ac-c5e03a972587
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 9beddd6a-74e4-4edf-9b3f-c6a454c8e89d
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 02cd15ce-0a33-4386-8391-034310e22d47
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: ab3e2ab9-7e7e-4993-b2ff-8bcbfeba2bbb
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 757c29da-92c9-459f-86f6-93216c4a79bb
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: 4aaabf7a-1dd8-41fc-a14a-1d614b90b2ae
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: 3706b03f-eb0f-4516-a2a2-ae06ccc06602
+      m_Path: <Keyboard>/upArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: f1780da1-ad7f-4296-a72a-4f7ab5b08e6e
+      m_Path: <Keyboard>/downArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 3e58254c-d1e3-4c52-844d-54fe3cf3bf86
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 9257be68-e32d-4e62-a35e-42e9dbea53ab
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: 2D Vector
+      m_Id: b9ea2f38-c7b1-4344-977c-cb09cea030db
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 4
+    - m_Name: up
+      m_Id: f26625e7-150f-4bb5-81c7-85de95c096f9
+      m_Path: <XInputController>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: down
+      m_Id: 141d53b1-ae3c-4a4d-8992-a4e387d73012
+      m_Path: <XInputController>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 1138980a-0b73-4ed2-9000-c115d845012c
+      m_Path: <XInputController>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    - m_Name: right
+      m_Id: 88356a75-447f-4108-9105-edf21c55365e
+      m_Path: <XInputController>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Move
+      m_Flags: 8
+    m_Flags: 0
 --- !u!1 &1320477521
 GameObject:
   m_ObjectHideFlags: 0
