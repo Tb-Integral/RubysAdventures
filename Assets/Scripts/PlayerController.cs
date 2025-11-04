@@ -9,14 +9,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 move;
-    private int currentHealth;
+    public int currentHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MoveAction.Enable();
         rb = GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
+        currentHealth = maxHealth - 2;
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(position);
     }
 
-    private void ChangeHealth(int amount)
+    public void ChangeHealth(int amount)
     {
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
