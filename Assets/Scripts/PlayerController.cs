@@ -9,7 +9,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 move;
-    public int currentHealth;
+    private int currentHealth;
+
+    public int health { get { return currentHealth; }}
+    public float timeInvincible = 2f;
+    private bool IsInvincible;
+    private float damageCooldown;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +28,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         move = MoveAction.ReadValue<Vector2>();
+
+        if (IsInvincible)
+        {
+            damageCooldown -= Time.deltaTime;
+            if (damageCooldown < 0)
+            {
+                IsInvincible = false;
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -33,6 +47,15 @@ public class PlayerController : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
+        if (amount < 0)
+        {
+            if (IsInvincible)
+            {
+                return;
+            }
+            IsInvincible = true;
+            damageCooldown = timeInvincible;
+        }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
     }
 }
