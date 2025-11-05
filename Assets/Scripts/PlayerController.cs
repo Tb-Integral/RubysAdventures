@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         MoveAction.Enable();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth - 2;
+        MyUIHandler.instance.SetHealthValue(currentHealth/(float)maxHealth);
     }
 
     // Update is called once per frame
@@ -57,5 +58,6 @@ public class PlayerController : MonoBehaviour
             damageCooldown = timeInvincible;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
+        MyUIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
     }
 }
