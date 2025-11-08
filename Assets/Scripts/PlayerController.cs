@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.WSA;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 3f;
     public InputAction MoveAction;
     public int maxHealth = 5;
+    public GameObject projectile;
+    public float projectileForce = 300f;
 
     private Rigidbody2D rb;
     private Vector2 move;
@@ -52,6 +55,11 @@ public class PlayerController : MonoBehaviour
                 IsInvincible = false;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Launch();
+        }
     }
 
     private void FixedUpdate()
@@ -75,5 +83,14 @@ public class PlayerController : MonoBehaviour
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         MyUIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
+    }
+
+    private void Launch()
+    {
+        GameObject proj = Instantiate(projectile, rb.position + Vector2.up, Quaternion.identity);
+
+        proj.GetComponent<MyProjectile>().Launch(moveDirection, projectileForce);
+
+        animator.SetTrigger("Launch");
     }
 }

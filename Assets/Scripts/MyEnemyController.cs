@@ -19,12 +19,6 @@ public class MyEnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         if (IsEnemy)
@@ -52,5 +46,7 @@ public class MyEnemyController : MonoBehaviour
     public void BecomeFriendly()
     {
         IsEnemy = false;
+        rb.simulated = false;
+        transform.GetComponent<MyDamageZone>().enabled = false;
     }
 }
