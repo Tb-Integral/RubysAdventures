@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &-6410284970389662206
 Animator:
   serializedVersion: 7
@@ -101,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 6850110345777080628}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b47a87e7e5a0aa74d9d5aeee83b9e563, type: 2}
+  m_Controller: {fileID: 9100000, guid: be3e252e9ea86254fba6ac775dd22977, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

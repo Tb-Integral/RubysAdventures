@@ -9,12 +9,14 @@ public class MyEnemyController : MonoBehaviour
     private int nextPointIndex;
     private bool IsEnemy = true;
     private Rigidbody2D rb;
+    private Animator animator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         nextPointIndex = 0;
         nextPoint = new Vector2(movePoints[nextPointIndex].transform.position.x, movePoints[nextPointIndex].transform.position.y);
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,9 +38,14 @@ public class MyEnemyController : MonoBehaviour
                 }
                 nextPoint = new Vector2(movePoints[nextPointIndex].transform.position.x, movePoints[nextPointIndex].transform.position.y);
             }
-            Vector2 position = (Vector2)transform.position + speed * (nextPoint - (Vector2)transform.position).normalized * Time.fixedDeltaTime;
+            Vector2 directional = (nextPoint - (Vector2)transform.position).normalized;
+            Vector2 position = (Vector2)transform.position + speed * directional * Time.fixedDeltaTime;
+
+            // anim
+            animator.SetFloat("Move X", directional.x);
+            animator.SetFloat("Move Y", directional.y);
+
             rb.MovePosition(position);
-            
         }
     }
 

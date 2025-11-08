@@ -48919,6 +48919,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4572484887170406213, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6840970208882072775, guid: 358dc199859ddf04ea2f645e7dee94e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58058,6 +58063,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 7.233986
       objectReference: {fileID: 0}
+    - target: {fileID: 1391481799434740097, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: be3e252e9ea86254fba6ac775dd22977, type: 2}
     - target: {fileID: 2257672376749588416, guid: 358dc199859ddf04ea2f645e7dee94e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58118,6 +58128,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.2660141
       objectReference: {fileID: 0}
+    - target: {fileID: 4572484887170406213, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6840970208882072775, guid: 358dc199859ddf04ea2f645e7dee94e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58127,6 +58142,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 7.233986
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928093861209811649, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4277048
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928093861209811649, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 7051014503950784632, guid: 358dc199859ddf04ea2f645e7dee94e1,
         type: 3}
@@ -62851,6 +62876,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4572484887170406213, guid: 358dc199859ddf04ea2f645e7dee94e1,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6840970208882072775, guid: 358dc199859ddf04ea2f645e7dee94e1,
         type: 3}
