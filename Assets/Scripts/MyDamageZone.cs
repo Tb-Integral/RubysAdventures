@@ -16,7 +16,7 @@ public class MyDamageZone : MonoBehaviour
             }
             else
             {
-                Destroy(controller.gameObject);
+                controller.transform.position = Vector3.zero;
             }
         }
     }

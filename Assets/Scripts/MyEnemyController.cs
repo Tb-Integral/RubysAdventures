@@ -10,6 +10,7 @@ public class MyEnemyController : MonoBehaviour
     private bool IsEnemy = true;
     private Rigidbody2D rb;
     private Animator animator;
+    private AudioSource audioSource;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +18,7 @@ public class MyEnemyController : MonoBehaviour
         nextPoint = new Vector2(movePoints[nextPointIndex].transform.position.x, movePoints[nextPointIndex].transform.position.y);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -48,5 +50,11 @@ public class MyEnemyController : MonoBehaviour
         IsEnemy = false;
         rb.simulated = false;
         transform.GetComponent<MyDamageZone>().enabled = false;
+        audioSource.Stop();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

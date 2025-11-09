@@ -179,3 +179,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyProjectile
   timer: 1
+  GetEnemySound: {fileID: 8300000, guid: 4e356d8e36201c14da953082c4d569ab, type: 3}

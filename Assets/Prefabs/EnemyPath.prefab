@@ -275,10 +275,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6850110345777080628, guid: 702cc5e618a67e449a698b2cbe7ff279,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4585647203484356952}
-    - targetCorrespondingSourceObject: {fileID: 6850110345777080628, guid: 702cc5e618a67e449a698b2cbe7ff279,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 4460432823778714428}
   m_SourcePrefab: {fileID: 100100000, guid: 702cc5e618a67e449a698b2cbe7ff279, type: 3}
 --- !u!4 &6928093861209811649 stripped
@@ -338,19 +334,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4585647203484356952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734340317022379703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562402b499f6ff9449b6c2a7de905d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MyDamageZone
-  amount: -1
 --- !u!61 &4460432823778714428
 BoxCollider2D:
   m_ObjectHideFlags: 0

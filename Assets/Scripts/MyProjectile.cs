@@ -4,6 +4,7 @@ public class MyProjectile : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float timer = 1f;
+    public AudioClip GetEnemySound;
 
     private void Awake()
     {
@@ -36,6 +37,7 @@ public class MyProjectile : MonoBehaviour
             Animator enemyAnimator = enemy.GetComponent<Animator>();
             enemyAnimator.SetTrigger("Fixed");
             enemy.BecomeFriendly();
+            enemy.PlaySound(GetEnemySound);
         }
 
         Destroy(gameObject);

@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     public InputAction TalkAction;
     public int maxHealth = 5;
     public GameObject projectile;
+    public AudioClip ProjectileSound;
     public float projectileForce = 300f;
+    public AudioClip damageAudio;
 
     private Rigidbody2D rb;
     private Vector2 move;
@@ -22,6 +24,9 @@ public class PlayerController : MonoBehaviour
     private float damageCooldown;
     private Animator animator;
     private Vector2 moveDirection = new Vector2(0, 1);
+    private AudioSource audiosource;
+    private bool IsMoving;
+    private AudioSource footsteps;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +37,8 @@ public class PlayerController : MonoBehaviour
         currentHealth = maxHealth - 2;
         MyUIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
         animator = GetComponent<Animator>();
+        audiosource = GetComponent<AudioSource>();
+        footsteps = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,10 +46,23 @@ public class PlayerController : MonoBehaviour
     {
         move = MoveAction.ReadValue<Vector2>();
 
-        if (!Mathf.Approximately(move.x, 0f) || !Mathf.Approximately(move.y, 0f))
+        IsMoving = !Mathf.Approximately(move.x, 0f) || !Mathf.Approximately(move.y, 0f);
+        if (IsMoving)
         {
             moveDirection.Set(move.x, move.y);
             moveDirection.Normalize();
+
+            if (!footsteps.isPlaying)
+            {
+                footsteps.Play();
+            }
+        }
+        else
+        {
+            if (footsteps.isPlaying)
+            {
+                footsteps.Pause();
+            }
         }
 
         // anim
@@ -61,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.C))
         {
+            PlayAudio(ProjectileSound);
             Launch();
         }
 
@@ -106,6 +127,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            PlayAudio(damageAudio);
             animator.SetTrigger("Hit");
 
             IsInvincible = true;
@@ -122,5 +144,10 @@ public class PlayerController : MonoBehaviour
         proj.GetComponent<MyProjectile>().Launch(moveDirection, projectileForce);
 
         animator.SetTrigger("Launch");
+    }
+
+    public void PlayAudio(AudioClip clip)
+    {
+        audiosource.PlayOneShot(clip);
     }
 }
