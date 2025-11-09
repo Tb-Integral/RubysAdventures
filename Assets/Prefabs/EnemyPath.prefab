@@ -277,6 +277,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4460432823778714428}
   m_SourcePrefab: {fileID: 100100000, guid: 702cc5e618a67e449a698b2cbe7ff279, type: 3}
+--- !u!198 &5623178609920477625 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8812442474644389434, guid: 702cc5e618a67e449a698b2cbe7ff279,
+    type: 3}
+  m_PrefabInstance: {fileID: 3766591050452088707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6928093861209811649 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6079883902424784194, guid: 702cc5e618a67e449a698b2cbe7ff279,
@@ -301,12 +307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 478e9b3960e57b94e92c037e2cca2622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyEnemyController
-  speed: 4
+  speed: 6
   movePoints:
   - {fileID: 650931228739596955}
   - {fileID: 6840970208882072775}
-  - {fileID: 2772995994597203206}
-  - {fileID: 7267044645427281706}
+  smokeEffect: {fileID: 5623178609920477625}
 --- !u!50 &4120264200121128153
 Rigidbody2D:
   serializedVersion: 5

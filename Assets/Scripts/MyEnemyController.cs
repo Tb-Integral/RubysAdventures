@@ -5,6 +5,7 @@ public class MyEnemyController : MonoBehaviour
 {
     public float speed = 4f;
     public Transform[] movePoints;
+    public ParticleSystem smokeEffect;
     private Vector2 nextPoint;
     private int nextPointIndex;
     private bool IsEnemy = true;
@@ -51,6 +52,7 @@ public class MyEnemyController : MonoBehaviour
         rb.simulated = false;
         transform.GetComponent<MyDamageZone>().enabled = false;
         audioSource.Stop();
+        smokeEffect.Stop();
     }
 
     public void PlaySound(AudioClip clip)
