@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 using UnityEngine.WSA;
 
 public class PlayerController : MonoBehaviour
 {
     public float speed = 3f;
     public InputAction MoveAction;
+    public InputAction TalkAction;
     public int maxHealth = 5;
     public GameObject projectile;
     public float projectileForce = 300f;
@@ -14,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 move;
     private int currentHealth;
 
-    public int health { get { return currentHealth; }}
+    public int health { get { return currentHealth; } }
     public float timeInvincible = 2f;
     private bool IsInvincible;
     private float damageCooldown;
@@ -25,9 +27,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         MoveAction.Enable();
+        TalkAction.Enable();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth - 2;
-        MyUIHandler.instance.SetHealthValue(currentHealth/(float)maxHealth);
+        MyUIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
         animator = GetComponent<Animator>();
     }
 
@@ -59,6 +62,26 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             Launch();
+        }
+
+        if (TalkAction.triggered)
+        {
+            FindFriend();
+        }
+    }
+
+    private void FindFriend()
+    {
+        RaycastHit2D hit = Physics2D.CircleCast(rb.position, 1f, moveDirection, 1f, LayerMask.GetMask("NPC"));
+
+        if (hit.collider != null)
+        {
+            MyNonPlayerCharacter npc = hit.collider.GetComponent<MyNonPlayerCharacter>();
+
+            if (npc != null)
+            {
+                MyUIHandler.instance.TurnOnNPCDialogue();
+            }
         }
     }
 
