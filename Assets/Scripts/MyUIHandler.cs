@@ -9,6 +9,7 @@ public class MyUIHandler : MonoBehaviour
 
     private VisualElement m_Healthbar;
     private VisualElement m_NonPlayerDialogue;
+    private Label m_Text;
     private float m_TimerDisplay;
 
     private void Awake()
@@ -19,6 +20,7 @@ public class MyUIHandler : MonoBehaviour
         m_Healthbar = uiDocument.rootVisualElement.Q<VisualElement>("HealthBar");
 
         m_NonPlayerDialogue = uiDocument.rootVisualElement.Q<VisualElement>("NPCDialogue");
+        m_Text = uiDocument.rootVisualElement.Q<Label>();
         m_TimerDisplay = -1f;
     }
 
@@ -44,8 +46,16 @@ public class MyUIHandler : MonoBehaviour
         m_Healthbar.style.width = Length.Percent(amount * 100f);
     }
 
-    public void TurnOnNPCDialogue()
+    public void TurnOnNPCDialogue(int flag)
     {
+        if (flag == 0)
+        {
+            m_Text.text = "Hey! Help me fix all those broken robots!";
+        }
+        else
+        {
+            m_Text.text = "I told him that using drill motors was a screw-up waiting to happen.. and now look at them.";
+        }
         m_NonPlayerDialogue.style.display = DisplayStyle.Flex;
         m_TimerDisplay = displayTime;
     }

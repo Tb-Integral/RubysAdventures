@@ -80,7 +80,14 @@ public class PlayerController : MonoBehaviour
 
             if (npc != null)
             {
-                MyUIHandler.instance.TurnOnNPCDialogue();
+                if (npc.CompareTag("commonNPC"))
+                {
+                    MyUIHandler.instance.TurnOnNPCDialogue(0);
+                }
+                else
+                {
+                    MyUIHandler.instance.TurnOnNPCDialogue(1);
+                }
             }
         }
     }
