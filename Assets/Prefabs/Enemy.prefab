@@ -257,6 +257,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmokeEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 4203455705786557895, guid: bbed5e19cb3602b49bfe8d90304d58b1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7059435765676837766, guid: bbed5e19cb3602b49bfe8d90304d58b1,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip ProjectileSound;
     public float projectileForce = 300f;
     public AudioClip damageAudio;
+    public GameObject damageEffect;
 
     private Rigidbody2D rb;
     private Vector2 move;
@@ -127,6 +128,7 @@ public class PlayerController : MonoBehaviour
             {
                 return;
             }
+            Instantiate(damageEffect, transform.position + Vector3.up, Quaternion.identity);
             PlayAudio(damageAudio);
             animator.SetTrigger("Hit");
 

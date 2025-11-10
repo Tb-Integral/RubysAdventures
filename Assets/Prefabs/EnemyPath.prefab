@@ -312,6 +312,8 @@ MonoBehaviour:
   - {fileID: 650931228739596955}
   - {fileID: 6840970208882072775}
   smokeEffect: {fileID: 5623178609920477625}
+  damageEffect: {fileID: 646983913794353789, guid: a6dd42ae0db1aa1428cf8a462a5c0ab8,
+    type: 3}
 --- !u!50 &4120264200121128153
 Rigidbody2D:
   serializedVersion: 5

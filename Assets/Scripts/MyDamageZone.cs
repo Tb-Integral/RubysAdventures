@@ -17,6 +17,7 @@ public class MyDamageZone : MonoBehaviour
             else
             {
                 controller.transform.position = Vector3.zero;
+                controller.ChangeHealth(controller.maxHealth);
             }
         }
     }
