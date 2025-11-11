@@ -106,9 +106,13 @@ public class PlayerController : MonoBehaviour
                 {
                     MyUIHandler.instance.TurnOnNPCDialogue(0);
                 }
-                else
+                else if (npc.CompareTag("duckoNPC"))
                 {
                     MyUIHandler.instance.TurnOnNPCDialogue(1);
+                }
+                else
+                {
+                    MyUIHandler.instance.TurnOnNPCDialogue(2);
                 }
             }
         }

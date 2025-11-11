@@ -48,13 +48,12 @@ public class MyUIHandler : MonoBehaviour
 
     public void TurnOnNPCDialogue(int flag)
     {
-        if (flag == 0)
+        switch (flag)
         {
-            m_Text.text = "Hey! Help me fix all those broken robots!";
-        }
-        else
-        {
-            m_Text.text = "I told him that using drill motors was a screw-up waiting to happen.. and now look at them.";
+            case 0: m_Text.text = "Hey! Help me fix all those broken robots!"; break;
+            case 1: m_Text.text = "I told him that using drill motors was a screw-up waiting to happen.. and now look at them."; break;
+            case 2: m_Text.text = "I hope to never get involved with animation again. It's cruel."; break;
+            case -1: m_Text.text = "Congratulations, you fixed all the robots."; break;
         }
         m_NonPlayerDialogue.style.display = DisplayStyle.Flex;
         m_TimerDisplay = displayTime;

@@ -55,6 +55,7 @@ public class MyEnemyController : MonoBehaviour
         audioSource.Stop();
         smokeEffect.Stop();
         Instantiate(damageEffect, transform.position + Vector3.up, Quaternion.identity);
+        GameManager.instance.AddEnemy();
     }
 
     public void PlaySound(AudioClip clip)
